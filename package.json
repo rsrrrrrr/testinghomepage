@@ -67,7 +67,7 @@
     "pretest-unit": "yarn ensure-deps",
     "test-unit": "lerna exec yarn test-unit --ignore \"'{@packages/{driver,root,static,web-config,net-stubbing,rewriter,ui-components},@cypress/{webpack-dev-server,eslint-plugin-dev}}'\"",
     "pretest-watch": "yarn ensure-deps",
-    "test-watch": "lerna exec yarn test-watch --ignore \"'@packages/{driver,root,static,web-config}'\"",
+    "test-watch": "nx run-many --target=test-watch --all --exclude=@packages/driver,@packages/root,@packages/static,@packages/web-config",
     "type-check": "yarn lerna exec yarn type-check --scope @tooling/system-tests && node scripts/type_check",
     "verify:mocha:results": "node ./scripts/verify_mocha_results",
     "watch": "yarn gulp watch",
