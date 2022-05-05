@@ -4,6 +4,7 @@
   "description": "Cypress.io end to end testing tool",
   "private": true,
   "scripts": {
+    "nx": "nx",
     "binary-build": "node ./scripts/binary.js build",
     "binary-deploy": "node ./scripts/binary.js deploy",
     "binary-deploy-linux": "./scripts/build-linux-binary.sh",
@@ -51,7 +52,7 @@
     "stop-only": "npx stop-only --skip .cy,.publish,.projects,node_modules,dist,dist-test,fixtures,lib,bower_components,src,__snapshots__ --exclude cypress-tests.ts,*only.cy.js",
     "stop-only-all": "yarn stop-only --folder packages",
     "pretest": "yarn ensure-deps",
-    "test": "yarn lerna exec yarn test --scope cypress --scope \"'@packages/{config,errors,data-context,electron,extension,https-proxy,launcher,net-stubbing,network,proxy,rewriter,socket}'\"",
+    "test": "nx run-many --target=test --projects=@packages/config,@packages/errors,@packages/data-context,@packages/electron,@packages/extension,@packages/https-proxy,@packages/launcher,@packages/net-stubbing,@packages/network,@packages/proxy,@packages/rewriter,@packages/socket",
     "test-debug": "lerna exec yarn test-debug --ignore \"'@packages/{driver,root,static,web-config}'\"",
     "pretest-e2e": "yarn ensure-deps",
     "test-integration": "lerna exec yarn test-integration --ignore \"'@packages/{driver,root,static,web-config}'\"",
