@@ -70,7 +70,9 @@
     "type-check": "yarn lerna exec yarn type-check --scope @tooling/system-tests && node scripts/type_check",
     "verify:mocha:results": "node ./scripts/verify_mocha_results",
     "watch": "yarn gulp watch",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "patch-package": "patch-package",
+    "yarn-deduplicate": "yarn-deduplicate --strategy=highest"
   },
   "dependencies": {
     "nvm": "0.0.4"
