@@ -54,7 +54,7 @@
     "stop-only-all": "yarn stop-only --folder packages",
     "pretest": "yarn ensure-deps",
     "test": "nx run-many --target=test --projects=@packages/config,@packages/errors,@packages/data-context,@packages/electron,@packages/extension,@packages/https-proxy,@packages/launcher,@packages/net-stubbing,@packages/network,@packages/proxy,@packages/rewriter,@packages/socket",
-    "test-debug": "lerna exec yarn test-debug --ignore \"'@packages/{driver,root,static,web-config}'\"",
+    "test-debug": "nx run-many --target=test-debug --all --exclude=@packages/driver,@packages/root,@packages/static,@packages/web-config",
     "pretest-e2e": "yarn ensure-deps",
     "test-integration": "lerna exec yarn test-integration --ignore \"'@packages/{driver,root,static,web-config}'\"",
     "test-mocha": "mocha --reporter spec scripts/spec.js",
